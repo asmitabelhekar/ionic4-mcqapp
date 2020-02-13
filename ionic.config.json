@@ -1,0 +1,7 @@
+{
+  "name": "mcqapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
