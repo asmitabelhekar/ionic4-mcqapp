@@ -1,0 +1,65 @@
+<!-- <ion-header translucent>
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div *ngIf="showCategory == 1 ">
+
+    <div style="position:fixed; top:0px; width: 100%; height:20%;background-color: blueviolet; color: white;">
+      <ion-row>
+        <ion-col size="2">
+          <ion-icon name="close"></ion-icon>
+        </ion-col>
+        <ion-col size="10">
+          <ion-label>Category</ion-label>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div style="margin-top:20%">
+      <div *ngFor="let item of categoryNames">
+        <mat-card fxLayout="coumn" fxLayoutAlign="start start" (click)="checkSubCategory(item.id)">
+          <label>{{item.categoryName}}</label>
+  
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="showCategory == 0 ">
+
+    <div style="position:fixed; top:0px; width: 100%; height:20%;background-color: blueviolet; color: white;">
+      <ion-row>
+        <ion-col size="2">
+          <ion-icon name="close" (click)="backToCategory()"></ion-icon>
+        </ion-col>
+        <ion-col size="10">
+          <ion-label>Sub Category</ion-label>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div style="margin-top:20%">
+      <div *ngFor="let item of subCategoryArray">
+        <mat-card fxLayout="coumn" fxLayoutAlign="start start">
+          <label>{{item.subCategoryKey}}</label>
+  
+        </mat-card>
+      </div>
+    </div>
+  </div>
+ 
+
+
+  <!-- <div *ngFor="let item of categoryNames">
+    <mat-card fxLayout="coumn" fxLayoutAli
+    gn="start start" (click)="checkSubCategory(item.id)">
+      <label>{{item.categoryName}}</label>
+      
+    </mat-card>
+  </div> -->
+
+</ion-content>
